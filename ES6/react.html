@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js" integrity="sha512-/1uYu3K5HmOTNdhaOt6Rh7qQgLk/zn0kfw4nqNtqbpACxAx2tKp+lXJ4tnx3zn0vMq4n97+1eKI0vfdU0x+NHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h2>React Application</h2>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+    <div id="app4"></div>
+
+    <script type="text/babel">
+
+        //custom element using React
+        // <h4>This is a react element</h4>
+        var element1 = React.createElement("h4", null, "This is a react element");
+        ReactDOM.render(element1, document.getElementById("app1"));
+
+         // <h4><p>This is a react element</p></h4>
+        var element2 = React.createElement("h4", null, 
+                    React.createElement("p", null, "This is a react inner element"));
+        ReactDOM.render(element2, document.getElementById("app2"));
+
+        //JSX
+        ReactDOM.render(<h4><p>This is a JSX Element</p></h4>, document.getElementById("app3"));
+
+        //Component(reusebale UI widget)
+        function MyComponent(){
+
+            //return the JSX
+            return (
+                <div>
+                    <h4>This is MyComponent</h4>
+                    <p>Created by Anil Joseph</p>
+                </div>
+            )
+        }
+
+        ReactDOM.render(<MyComponent/>, document.getElementById("app4"));
+
+
+
+
+    </script>
+
+</body>
+</html>
