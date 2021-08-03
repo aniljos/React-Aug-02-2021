@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import Hello from './components/Hello';
+import Counter from './components/Counter';
 
 function App() {
+
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +24,16 @@ function App() {
           Learn React
         </a>
       </header>
+    
+      <section>
+          {/* <Hello message="React" type="a"/>
+          <Hello message="JavaScript" show={false}/>
+          <Hello message="JSX" count={100} /> */}
+
+          <Counter title="Counter"/>
+          <Counter title="Value"/>
+
+      </section>
     </div>
   );
 }

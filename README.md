@@ -2,10 +2,10 @@
 ### Commands
 
 1. Create a new React Application: npx create-react-app the-awesome-app
-2. To start the React Application(form the the-awesome-app folder): npm start
+2. To start the React Application(from the the-awesome-app folder): npm start
 
 
-## Git Repositories
+### Git Repositories
 
 1. Application code and Presentation: https://github.com/aniljos/React-Aug-02-2021
 2. MocK REST API: https://github.com/aniljos/REST-API-Mock
@@ -24,4 +24,13 @@
 9.  Single-Page Applications with Routing
 10. Securing React Applications
 11. Deployment
+
+
+### Props
+
+1. Component Parameters
+2. Always read-only
+3. Changes to props will re-render the component
+4. Props is mechanism to exchange info/data between the a parent and child component
+5. Child to Parent, the property has to be a callback function
 
