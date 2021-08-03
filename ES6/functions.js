@@ -41,6 +41,38 @@ var squareIt = x => x * x;
 console.log("squareIt: ", squareIt(20));
 
 
+var a = 10;
 
+function bar(){
+
+    console.log(a);
+}
+
+var obj = {
+    id: 10,
+    print: function(){
+
+       
+        console.log("id: ", this.id);
+
+        // setTimeout(function(){
+        //     console.log("id after 1 sec: ", this.id);
+        // }, 1000);
+
+        setTimeout(() => {
+         
+            console.log("id after 1 sec: ", this.id);
+        }, 1000);
+    }
+}
+obj.print();
+
+var emp = {
+    id: 100
+}
+//emp.print();
+
+var empFn = obj.print.bind(emp);
+empFn();
 
 

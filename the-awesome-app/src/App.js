@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './components/Hello';
 import Counter from './components/Counter';
+import ListProducts from './components/ListProducts';
 
 function App() {
 
@@ -30,8 +31,10 @@ function App() {
           <Hello message="JavaScript" show={false}/>
           <Hello message="JSX" count={100} /> */}
 
-          <Counter title="Counter"/>
-          <Counter title="Value"/>
+          {/* <Counter title="Counter"/>
+          <Counter title="Value"/> */}
+
+          <ListProducts/>
 
       </section>
     </div>
