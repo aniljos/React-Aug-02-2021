@@ -1,0 +1,11 @@
+.product{
+
+    min-height: 200px;
+    width: 300px;
+    border: 2px solid cadetblue;
+    background-color: slateblue;
+    border-radius: 10px;
+    margin: 7px;
+    padding: 7px;
+    
+}
