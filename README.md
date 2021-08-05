@@ -34,3 +34,12 @@
 4. Props is mechanism to exchange info/data between the a parent and child component
 5. Child to Parent, the property has to be a callback function
 
+### .js vs .jsx
+
+1. No difference
+
+### CSS
+
+1. Inline styles
+2. CSS classes
+3. CSS is in the JSX(React) 

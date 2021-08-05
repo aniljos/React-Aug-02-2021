@@ -4,6 +4,7 @@ import Hello from './components/Hello';
 import Counter from './components/Counter';
 import ListProducts from './components/ListProducts';
 
+
 function App() {
 
 
@@ -34,7 +35,9 @@ function App() {
           {/* <Counter title="Counter"/>
           <Counter title="Value"/> */}
 
-          <ListProducts/>
+          {/* <ListProducts/> */}
+
+    
 
       </section>
     </div>
