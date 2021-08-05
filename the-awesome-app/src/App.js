@@ -38,9 +38,9 @@ function App() {
 
           {/* <ListProducts/> */}
 
-          {/* <ProductStore/> */}
+          <ProductStore/>
 
-          <UseCallbackDemo/>
+          {/* <UseCallbackDemo/> */}
 
       </section>
     </div>
