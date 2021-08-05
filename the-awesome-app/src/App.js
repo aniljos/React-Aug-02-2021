@@ -3,7 +3,8 @@ import './App.css';
 import Hello from './components/Hello';
 import Counter from './components/Counter';
 import ListProducts from './components/ListProducts';
-
+import ProductStore from './components/ProductStore';
+import UseCallbackDemo from './components/UseCallbackDemo';
 
 function App() {
 
@@ -37,7 +38,9 @@ function App() {
 
           {/* <ListProducts/> */}
 
-    
+          {/* <ProductStore/> */}
+
+          <UseCallbackDemo/>
 
       </section>
     </div>
