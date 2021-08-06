@@ -25,7 +25,7 @@ exports.loginAction = (req, resp) => {
     console.log(reqUser);
     const user = users.find(item => item.name === reqUser.name && item.password === reqUser.password);
     if (user) {
-        const accessToken = jsonwebtoken_1.default.sign(user, JWT_ACCESS_TOKEN_SECRET, { expiresIn: '5m' });
+        const accessToken = jsonwebtoken_1.default.sign(user, JWT_ACCESS_TOKEN_SECRET, { expiresIn: '10s' });
         const refreshToken = jsonwebtoken_1.default.sign(user, JWT_REFRESH_TOKEN_SECRET);
         refreshTokens.push(refreshToken);
         resp.json({ accessToken, refreshToken });
@@ -63,7 +63,7 @@ exports.refreshToken = (req, resp) => {
         if (err) {
             return resp.sendStatus(403);
         }
-        const accsessToken = jsonwebtoken_1.default.sign({ name: user.name, password: user.password }, JWT_ACCESS_TOKEN_SECRET, { expiresIn: '5m' });
+        const accsessToken = jsonwebtoken_1.default.sign({ name: user.name, password: user.password }, JWT_ACCESS_TOKEN_SECRET, { expiresIn: '10s' });
         return resp.json({ accessToken: accsessToken });
     });
 };

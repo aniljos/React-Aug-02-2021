@@ -65,8 +65,8 @@ class ProductForm extends Component {
                 </div>
 
                 <div>
-                    <button onClick={this.save}>Save</button> &nbsp;
-                    <button>Cancel</button>
+                    <button className="btn btn-success" onClick={this.save}>Save</button> &nbsp;
+                    <button className="btn btn-warning">Cancel</button>
                 </div>
             </div>
         )

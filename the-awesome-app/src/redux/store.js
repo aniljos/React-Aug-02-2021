@@ -12,14 +12,37 @@ const storeReducer = (currentState = storeInitState, action) => {
         const cartItem = action.payload;
         //create a copy
         const cart = [...currentState.cart];
-        cart.push(cartItem);
+        const index = cart.findIndex(item => item.product.id === cartItem.product.id);
+        if(index === -1){
+            cart.push(cartItem);
+        }
+        else{
+            cart[index].quantity++;
+        }
+        
         return {
             ...currentState,
             cart: cart
         };
     }
 
-    
+    if (action.type === "RemoveItem") {
+
+        const id = action.productId;
+        //create a copy
+        const cart = [...currentState.cart];
+        const index = cart.findIndex(item => item.product.id === id);
+        if (index !== -1) {
+            cart.splice(index, 1);
+            return {
+                ...currentState,
+                cart: cart
+            };
+        }
+
+    }
+
+
     //return the new/updated state
     return currentState;
 }
@@ -32,12 +55,19 @@ const authInitState = {
 }
 const authReducer = (currentState = authInitState, action) => {
 
-    if(action.type === "SET_AUTH"){
+    if (action.type === "SET_AUTH") {
 
         return {
             ...action.payload
         }
 
+    }
+    if(action.type === "UPDATE_ACCESS_TOKEN"){
+
+        return{
+            ...currentState,
+            accessToken: action.token
+        }
     }
 
     //return the new/updated state

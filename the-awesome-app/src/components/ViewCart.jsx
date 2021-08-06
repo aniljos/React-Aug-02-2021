@@ -4,15 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function ViewCart() {
 
-    const cart = [];
-    
+    const cart = useSelector(state => state.store.cart);
+    const dispatch = useDispatch()
 
     function remove(item){
-        
+        dispatch({type: "RemoveItem", productId: item.product.id})
     }
     return (
         <div>
             <h5 >Cart</h5>
+            {cart.length !== 0 ? null : <h5> The cart is empty</h5> }
 
             <div className="card-body">
                 {cart.map((item, index) => {

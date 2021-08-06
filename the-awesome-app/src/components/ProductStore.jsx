@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function ProductStore() {
@@ -53,10 +53,10 @@ function ProductStore() {
 
     }
 
-    function addToCart(product){
+    function addToCart(product) {
 
-        const cartItem = {product: product, quantity: 1};
-        dispatch({type: "AddItem", payload: cartItem});
+        const cartItem = { product: product, quantity: 1 };
+        dispatch({ type: "AddItem", payload: cartItem });
 
     }
     return (
@@ -67,18 +67,26 @@ function ProductStore() {
                     value={searchKey} onChange={changeKey} />
                 <p>Searching for {searchKey}</p>
 
-                <div style={{border: "2px solid blue"}}>
-                    <h5>Cart</h5>
-                    {cartStore.cart.map((item, index) => {
-                        return (
-                            <div>
-                                <p>Name: {item.product.name}</p>
-                                <p>Quantity: {item.quantity}</p>
-                            </div>
+                {cartStore.cart.length === 0 ? null : (
+                    <div className="card-body">
+                        <h5 className="card-header">
+                            Cart
+                        </h5>
+                        {cartStore.cart.map((item, index) => {
+                            return (
+                                <div className="card bg-light mb-3">
+                                    <p className="card-header">{item.product.name}</p>
+                                    <div className="card-body">
+                                        <p className="card-text">{item.product.description}</p>
+                                        <p className="card-text">Quantity: {item.quantity}</p>
+                                    </div>
 
-                        )
-                    })}
-                </div>
+
+                                </div>
+
+                            )
+                        })}
+                    </div>)}
 
                 <div>
                     {products.map((product, index) => {
@@ -88,7 +96,7 @@ function ProductStore() {
                                 <p>{product.description}</p>
                                 <p>{product.price}</p>
                                 <div>
-                                    <button onClick={() => addToCart(product)}>Add to Cart</button>
+                                    <button className="btn btn-success" onClick={() => addToCart(product)}>Add to Cart</button>
                                 </div>
                             </div>
                         );
