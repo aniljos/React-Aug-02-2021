@@ -2,16 +2,17 @@ import React, { Component, PureComponent } from 'react';
 import axios from 'axios';
 import './ListProducts.css';
 import ProductForm from './ProductForm';
+import {connect} from 'react-redux';
 
 
-
-class ListProducts extends PureComponent {
+class ListProducts extends Component {
 
     state = {
         data: [],
         selectedProduct: null
     }
-    url = "http://localhost:9000/products";
+    //url = "http://localhost:9000/products";
+    url = "http://localhost:9000/secure_products";
 
     constructor(props){
         super(props);
@@ -24,8 +25,11 @@ class ListProducts extends PureComponent {
     }
 
     fetch() {
+
+        // Authorization: Bearer ...token...
+        const headers = {Authorization: `Bearer ${this.props.authStore.accessToken}` }
         axios
-            .get(this.url)
+            .get(this.url, {headers: headers})
             .then((response) => {
                 console.log("success", response);
                 this.setState({
@@ -50,7 +54,8 @@ class ListProducts extends PureComponent {
 
         try {
 
-            const response = await axios.delete(this.url + "/" + product.id);
+            const headers = {Authorization: `Bearer ${this.props.authStore.accessToken}` }
+            const response = await axios.delete(this.url + "/" + product.id, {headers});
             alert("deleted");
             this.fetch();
 
@@ -73,7 +78,8 @@ class ListProducts extends PureComponent {
 
         try {
             
-            const response = await axios.put(this.url + "/" + product.id, product);
+            const headers = {Authorization: `Bearer ${this.props.authStore.accessToken}` }
+            const response = await axios.put(this.url + "/" + product.id, product, {headers});
             this.setState({
                 selectedProduct: null
             }, ()=> {
@@ -134,4 +140,13 @@ class ListProducts extends PureComponent {
     }
 }
 
-export default ListProducts;
+const mapStateToProps = (reduxState) => {
+
+    return{
+        authStore: reduxState.auth
+    }
+    
+}
+
+
+export default connect(mapStateToProps)(ListProducts);

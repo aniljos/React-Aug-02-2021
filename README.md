@@ -43,3 +43,13 @@
 1. Inline styles
 2. CSS classes
 3. CSS is in the JSX(React) 
+
+### Topics
+
+1. React.lazy
+2. React.forwardRef
+3. Higher Order Components
+4. React Hooks
+5. Unit testing - Jest, React testing lib
+6. E2E tetsing - Cypress
+7. Libraries: Material UI, Prime react

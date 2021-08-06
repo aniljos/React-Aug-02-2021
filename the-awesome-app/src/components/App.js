@@ -7,6 +7,7 @@ import ProductStore from './ProductStore';
 import ViewCart from './ViewCart';
 import Login from './Login';
 import Logout from './Logout';
+import ProtectedRoute from './ProtectedRoute';
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
                 </div>
                 <section className="row">
                     <Route path="/" exact component={Hello}/>
-                    <Route path="/products" exact component={ListProducts}/>
+                    <ProtectedRoute path="/products" exact component={ListProducts}/>
                     <Route path="/store" exact component={ProductStore}/>
                     <Route path="/cart" exact component={ViewCart}/>
                     <Route path="/login" exact component={Login}/>

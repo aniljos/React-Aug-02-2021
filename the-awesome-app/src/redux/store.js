@@ -25,9 +25,20 @@ const storeReducer = (currentState = storeInitState, action) => {
 }
 
 const authInitState = {
-    accessToken: ""
+
+    isAuth: false,
+    accessToken: "",
+    refreshToken: ""
 }
 const authReducer = (currentState = authInitState, action) => {
+
+    if(action.type === "SET_AUTH"){
+
+        return {
+            ...action.payload
+        }
+
+    }
 
     //return the new/updated state
     return currentState;
