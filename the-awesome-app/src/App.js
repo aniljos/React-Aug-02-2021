@@ -4,6 +4,7 @@ import Hello from './components/Hello';
 import Counter from './components/Counter';
 import ListProducts from './components/ListProducts';
 import ProductStore from './components/ProductStore';
+import ProductStoreClass from './components/ProductStoreClass';
 import UseCallbackDemo from './components/UseCallbackDemo';
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
 
           {/* <ListProducts/> */}
 
-          <ProductStore/>
+          {/* <ProductStore/> */}
+          <ProductStoreClass/>
 
           {/* <UseCallbackDemo/> */}
 
